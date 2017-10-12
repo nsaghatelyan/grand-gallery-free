@@ -27,7 +27,7 @@ $save_data_nonce = wp_create_nonce('gdgallery_nonce_save_data' . $id);
 
 $hidden_class = "gdgallery_hidden";
 $display_type_opt = (in_array($gallery_data->view_type, array(0, 1))) ? "" : $hidden_class;
-$show_title_opt = ($gallery_data->show_title == 1) ? "" : $hidden_class;
+$show_title_opt = (isset($gallery_data->show_title) && $gallery_data->show_title == 1) ? "" : $hidden_class;
 
 
 ?>
@@ -114,7 +114,7 @@ $show_title_opt = ($gallery_data->show_title == 1) ? "" : $hidden_class;
                             <li class="gdgallery_show_title_section">
                                 <h4><?= _e('Show Gallery Title', 'gdgallery'); ?></h4>
                                 <input type="checkbox" id="gdgallery_show_title"
-                                       name="gdgallery_show_title" <?php if ($gallery_data->show_title == 1) echo "checked"; ?>>
+                                       name="gdgallery_show_title" <?php if (isset($gallery_data->show_title) && $gallery_data->show_title == 1) echo "checked"; ?>>
                             </li>
                             <li class="gdgallery_title_position_section <?php echo $show_title_opt; ?>">
                                 <h4><?= _e('Gallery Title Position', 'gdgallery'); ?></h4>

@@ -8,7 +8,6 @@
  * Text Domain: gdgallery
  */
 
-
 if (!defined('ABSPATH')) {
     exit();
 }
